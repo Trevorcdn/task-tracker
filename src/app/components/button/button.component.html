@@ -1,0 +1,6 @@
+<!--[ngStyle] allows you to do some inline css codes in your html
+    (click)="onClick()" means that when the button is (click) then it calls the onClick() function in .ts
+-->
+<button [ngStyle]="{'background-color': color}"class="btn" (click)="onClick()">
+    {{text}}
+</button>

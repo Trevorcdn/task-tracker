@@ -1,0 +1,17 @@
+<header>
+    <h1>{{title}}</h1>
+    <!-- 1) color and text is used to specify the kind of button we want so that the button
+            component can be reused in different situation
+         2) (btnClick) is a custom event we defined using an Output+EventEmitter
+             where when clicked, it will run the toggleAddTask() method in the header.component.ts file
+         Likewise, this makes (btnClick) reusable where each separate .html files can define their own
+         method associated with the (btnClick) 
+         3) color = if showAddTask is TRUE the button turns red else it turns green
+            Needs a double curly brace for this case
+         4) *ngIf will only show button if hasRoute returns true where the current url is === to "hostUrl/"
+    -->
+    <app-button *ngIf="hasRoute('/')" color="{{showAddTask ? 'red' : 'green'}}" 
+                text="{{showAddTask ? 'Close' : 'Add Task'}}"  
+                (btnClick)="toggleAddTask()">
+    </app-button>
+</header>

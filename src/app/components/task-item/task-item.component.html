@@ -1,0 +1,8 @@
+<!--[ngClass]="{reminder: task.reminder}" is a conditional where if reminder == true then the div class takes on the task.reminder css options -->
+<div [ngClass]="{reminder: task.reminder}" class="task" (dblclick)="onToggle(task)">
+    <h3>{{task.text}} 
+        <fa-icon (click)="onDelete(task)" [ngStyle]="{'color':'red'}" [icon]="faTimes" ></fa-icon> <!--red 'X' button for delete-->
+    </h3>
+
+    <p>{{task.day}}</p>
+</div>
